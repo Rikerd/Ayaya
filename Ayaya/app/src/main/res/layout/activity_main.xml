@@ -9,7 +9,7 @@
     <VideoView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/videoView" app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/ayayaVideo" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
