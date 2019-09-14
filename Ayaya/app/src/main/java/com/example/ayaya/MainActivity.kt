@@ -6,9 +6,13 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.VideoView
+import android.widget.TextView
+import android.media.MediaPlayer.OnPreparedListener
+import android.R.attr.start
+import android.R.attr.start
+import android.media.MediaPlayer.OnCompletionListener
 
 class MainActivity : AppCompatActivity() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
@@ -25,11 +29,8 @@ class MainActivity : AppCompatActivity() {
         videoView.setVideoURI(uri)
         videoView.start()
 
-        /*
-        videoView.setOnCompletionListener(MediaPlayer.OnCompletionListener {
-            override fun onCompletion() {
-                videoView.start()
-            }
-        })*/
+        val loopCount = findViewById<TextView>(R.id.watchCount)
+
+        videoView.setOnPreparedListener(OnPreparedListener { mp -> mp.isLooping = true })
     }
 }
