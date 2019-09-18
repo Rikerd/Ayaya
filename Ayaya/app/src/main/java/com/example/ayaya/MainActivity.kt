@@ -1,16 +1,11 @@
 package com.example.ayaya
 
 import android.content.pm.ActivityInfo
-import android.media.MediaPlayer
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.VideoView
-import android.widget.TextView
 import android.media.MediaPlayer.OnPreparedListener
-import android.R.attr.start
-import android.R.attr.start
-import android.media.MediaPlayer.OnCompletionListener
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,14 +17,12 @@ class MainActivity : AppCompatActivity() {
 
         val videoView = findViewById<VideoView>(R.id.ayayaVideo)
 
-        val videoPath = "android.resource://com.example.ayaya/" + R.raw.rockets
+        val videoPath = "android.resource://com.example.ya/" + R.raw.ayaya
 
         val uri = Uri.parse(videoPath)
 
         videoView.setVideoURI(uri)
         videoView.start()
-
-        val loopCount = findViewById<TextView>(R.id.watchCount)
 
         videoView.setOnPreparedListener(OnPreparedListener { mp -> mp.isLooping = true })
     }
