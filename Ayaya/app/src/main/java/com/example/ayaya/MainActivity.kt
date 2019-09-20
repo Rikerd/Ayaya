@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.VideoView
 import android.media.MediaPlayer.OnPreparedListener
+import android.os.SystemClock
 import android.view.View
+import android.widget.Chronometer
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,6 +35,11 @@ class MainActivity : AppCompatActivity() {
 
         videoView.setVideoURI(uri)
         videoView.start()
+
+        val chronometer = findViewById<Chronometer>(R.id.chronometer)
+
+        chronometer.setBase(SystemClock.elapsedRealtime())
+        chronometer.start()
 
         videoView.setOnPreparedListener(OnPreparedListener { mp -> mp.isLooping = true })
     }
