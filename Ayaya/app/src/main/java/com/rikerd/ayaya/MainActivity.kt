@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         val videoView = findViewById<VideoView>(R.id.ayayaVideo)
 
-        val videoPath = "android.resource://com.example.ya/" + R.raw.ayaya
+        val videoPath = "android.resource://com.rikerd.ayaya/" + R.raw.ayaya
 
         val uri = Uri.parse(videoPath)
 
